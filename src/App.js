@@ -1,10 +1,20 @@
 import React from 'react';
 import './App.css';
+import ClickCounter from './ClickCounter';
+import HoverCounter from './HoverCounter';
 
 function App() {
+  const texts = {
+    name: "chinmay",
+    cast: "meena"
+  }
   return (
     <div className="App">
-      Hello, world!
+      {/* if you want to pass props to ClickCounter Components you have to pass them here and then they will go to HOC first and then from HOC
+      again you have to pass them to the originalComponet 
+      like i am passing here texts as data props*/}
+      <ClickCounter data={texts}/>
+      <HoverCounter />
     </div>
   );
 }
